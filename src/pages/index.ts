@@ -33,6 +33,7 @@ import CustomerFAQs from "./manage/Management/Room/Mailbox/CustomerFAQs";
 
 //Place to Stay
 import DetailRoomU_1 from "./manage/Management/Room/PlaceToStay/DetailRoomU_1";
+import ErrorPage from "./Error/ErrorPage";
 
 export {
     HomePage, RegisterManager, ContactInfoManager, CreatePasswordManager, VerifyAccountManager,
@@ -41,5 +42,5 @@ export {
     LocationHotel, NameHotel, AmenitiesHotel, CheckInOutHotel, MultiStepHotel,
     RoomDetails, BathRoom, RoomAmenities, NameRoom, ImageRoom, Payment,
     CalendarRoom, PriceRoom, BookingMessage, AdminMessage, CustomerFAQs,
-    DetailRoomU_1
+    DetailRoomU_1, ErrorPage
 };

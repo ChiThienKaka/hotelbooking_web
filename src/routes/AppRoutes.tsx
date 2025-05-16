@@ -20,7 +20,8 @@ import {
   BookingMessage,
   AdminMessage,
   CustomerFAQs,
-  DetailRoomU_1
+  DetailRoomU_1,
+  ErrorPage
 } from '../pages';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
@@ -28,7 +29,7 @@ import { login, User } from '../redux/Slice/auth/authSlice';
 import { jwtDecode } from 'jwt-decode';
 import DetailRoomU from '../pages/manage/Management/Room/PlaceToStay/DetailRoomU';
 import { AdminLayout } from '../layouts/admin';
-import { HomeAdmin, LoginAdmin } from '../pages/admin';
+import { BookingAll, HomeAdmin, LoginAdmin, UserManager , Thanhtoan, Khachsan, TypeHotelAd} from '../pages/admin';
 import IndexAdmin from '../pages/admin/IndexAdmin';
 const AppRoutes = () => {
   const dispatch = useDispatch();
@@ -45,6 +46,7 @@ const AppRoutes = () => {
           <Routes>
             {/* Route chung  */}
             <Route path='/' element={<DefaultLayout><HomePage /></DefaultLayout>} />
+            <Route path='/error-page' element={<DefaultLayout><ErrorPage /></DefaultLayout>} />
 
             {/* Route cho quản lý  */}
             <Route path='/manage'>
@@ -94,8 +96,14 @@ const AppRoutes = () => {
             <Route path='/admin'>
                 <Route index element={<LoginAdmin />} />
                 <Route path='login' element={<LoginAdmin />} />
+                <Route path='home/home-manager-user' element={<AdminLayout><UserManager /></AdminLayout>} />
                 <Route path='home/home-index' element={<AdminLayout><HomeAdmin /></AdminLayout>} />
                 <Route path='home/trangchu-index' element={<AdminLayout><IndexAdmin/></AdminLayout>} />
+                <Route path='home/booking-all' element={<AdminLayout><BookingAll /></AdminLayout>} />
+                <Route path='home/thanh-toan-admin-nguoidung' element={<AdminLayout><Thanhtoan /></AdminLayout>} />
+                <Route path='home/thongke-khach-san' element={<AdminLayout><Khachsan /></AdminLayout>} />
+                <Route path='home/thongke-loai-khach-san' element={<AdminLayout><TypeHotelAd /></AdminLayout>} />
+                
             </Route>
             
           </Routes>

@@ -21,7 +21,9 @@ function LoginAdmin() {
                     const decode : User = jwtDecode(token);
                     console.log(decode);
                     dispatch(login(decode));
-                    navigate(`/admin/home/trangchu-index`);
+                    if(decode.role_name==="admin"){
+                         navigate(`/admin/home/trangchu-index`);
+                    }
                 }    
             }
         }catch(err){

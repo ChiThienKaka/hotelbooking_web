@@ -5,7 +5,8 @@ import { Calendar, Col, ConfigProvider, Form, Row ,
   InputNumber,
   Button,
   Select,
-  Space, notification
+  Space, notification,
+  Checkbox
 } from "antd";
 import {StopOutlined} from '@ant-design/icons';
 import viVN from "antd/locale/vi_VN";
@@ -147,6 +148,20 @@ function CalendarRoom() {
                   <Form.Item name={"ngayketthuc"} label={"Ngày kết thúc"} initialValue={dayjs()}>
                        <DatePicker style={{width:259}} />
                   </Form.Item>
+                  <Space direction="vertical">
+                      <span>Quý vị muốn áp dụng thay đổi cho ngày nào trong tuần?</span>
+                      <Space>
+                      <Checkbox.Group defaultValue={['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']}>
+                        <Checkbox key="T2" value="T2">T2</Checkbox>
+                        <Checkbox key="T3" value="T3">T3</Checkbox>
+                        <Checkbox key="T4" value="T4">T4</Checkbox>
+                        <Checkbox key="T5" value="T5">T5</Checkbox>
+                        <Checkbox key="T6" value="T6">T6</Checkbox>
+                        <Checkbox key="T7" value="T7">T7</Checkbox>
+                        <Checkbox key="CN" value="CN">CN</Checkbox>
+                      </Checkbox.Group>
+                      </Space>
+                  </Space>
                   <Divider />
                   <Form.Item name={"status"} initialValue={true} label = {"Mở hoặc đóng nhận đặt phòng"} >
                        <Radio.Group>

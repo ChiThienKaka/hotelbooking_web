@@ -5,13 +5,13 @@ import { baseUrl, COLORS, formatDateHour } from "../../constants/constants";
 import { DeleteOutlined, FormOutlined } from '@ant-design/icons';
 import "./index.css"
 const {Search} = Input
-function HomeAdmin() {
+function UserManager() {
     const [dsUser, setDsUser] = useState<any[]>();
     //Lấy thông tin user người dùng
     const getAPIUserNguoidung = async ()=> {
         try{
              //gọi API lấy thông tin user người dùng
-            const res = await axios.get(`${baseUrl}auth/user/get-info/quanly`);
+            const res = await axios.get(`${baseUrl}auth/user/get-info/nguoidung`);
             console.log(res.data);
             setDsUser(res.data);
         }catch(e){
@@ -38,7 +38,7 @@ function HomeAdmin() {
     return ( 
         <div style={{padding:20}}>
             <Space direction="vertical" size={"large"}>
-                <h2>Danh sách tìm kiếm quản lý</h2>
+                <h2>Danh sách tìm kiếm người dùng</h2>
                <Space direction="vertical" style={{marginBottom:20}}>
                     <Space>
                         <Search placeholder="Nhập Email hoặc Họ và Tên..." style={{zIndex:1, width:500}} enterButton />
@@ -53,4 +53,4 @@ function HomeAdmin() {
      );
 }
 
-export default HomeAdmin;
+export default UserManager;
